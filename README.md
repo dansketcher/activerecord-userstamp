@@ -9,6 +9,12 @@ Userstamp extends `ActiveRecord::Base` to add automatic updating of `creator`, `
 This gem is now compatible only with rails >= 5.0.0.rc1. This is because rails 5 doesn't want
 us adding application sepecific behavior on `ActiveRecord::Base` and use `ApplicationRecord` instead.
 
+Therefore, in addition to whatever is mentioned below, you will need to add the following lines 
+to your ApplicationRecord:
+```ruby
+  include ActiveRecord::Userstamp::ModelAdditions
+```
+
 Two class methods (`model_stamper` and `stampable`) are implemented in this gem. The `model_stamper`
 method is used in models that are responsible for creating, updating, or deleting other objects.
 Typically this would be the `User` model of your application. The `stampable` method is used in 
