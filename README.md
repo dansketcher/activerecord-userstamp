@@ -5,6 +5,10 @@
 Userstamp extends `ActiveRecord::Base` to add automatic updating of `creator`, `updater`, and 
 `deleter` attributes. It is based loosely on `ActiveRecord::Timestamp`.
 
+## NOTE
+This gem is now compatible only with rails >= 5.0.0.rc1. This is because rails 5 doesn't want
+us adding application sepecific behavior on `ActiveRecord::Base` and use `ApplicationRecord` instead.
+
 Two class methods (`model_stamper` and `stampable`) are implemented in this gem. The `model_stamper`
 method is used in models that are responsible for creating, updating, or deleting other objects.
 Typically this would be the `User` model of your application. The `stampable` method is used in 
@@ -14,6 +18,7 @@ models that are subject to being created, updated, or deleted by stampers.
 
 This is a fork of:
 
+ - the [activerecord-userstamp](https://github.com/lowjoel/activerecord-userstamp) gem
  - the [magiclabs-userstamp](https://github.com/magiclabs/userstamp) gem
  - which is a fork of [Michael Grosser's](https://github.com/grosser)
    [userstamp gem] (https://github.com/grosser/userstamp) 

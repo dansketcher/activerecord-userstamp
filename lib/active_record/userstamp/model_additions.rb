@@ -4,7 +4,3 @@ module ActiveRecord::Userstamp::ModelAdditions
   include ActiveRecord::Userstamp::Stampable
   include ActiveRecord::Userstamp::Stamper
 end
-
-ActiveRecord::Base.class_eval do
-  include ActiveRecord::Userstamp::ModelAdditions
-end
